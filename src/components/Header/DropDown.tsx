@@ -28,7 +28,7 @@ const DropDown: React.FC<DropDownProps> = ({ show, setShow }) => {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`bg-blue-500 flex flex-col w-36 py-2 bg-opacity-50 absolute px-2 justify-center items-center rounded-lg transition-all ease-in-out duration-300 ${
+      className={`bg-blue-500 flex z-50 flex-col w-36 py-2 bg-opacity-80 absolute px-2 justify-center items-center rounded-lg transition-all ease-in-out duration-300 ${
         show ? "show" : "opacity-0"
       }`}
       aria-expanded={show ? "true" : "false"}

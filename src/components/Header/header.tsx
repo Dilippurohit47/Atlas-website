@@ -24,7 +24,7 @@ const Header = () => {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
 
   return (
-    <header className="relative bg px-5 flex items-center justify-between lg:px-10 lg:py-[3.2rem] h-[4.8rem]">
+    <header className="relative bg px-5 flex items-center justify-between lg:px-10 lg:py-[3.2rem] h-[4.7rem] ">
       {/* Logo Section */}
       <div>
         <Image
@@ -39,7 +39,7 @@ const Header = () => {
           src="/logo-for-large-screens.png"
           height={180}
           width={180}
-          className="max-lg:hidden text-animate" 
+          className="max-lg:hidden text-animate"
         />
       </div>
 
