@@ -21,3 +21,17 @@
 
 /* Hide state */
 
+@keyframes growAndFadeIn {
+  0% {
+    transform: scale(0.2);  /* Start with smaller size */
+    opacity: 0;             /* Start with invisible text */
+  }
+  100% {
+    transform: scale(1);    /* End with normal size */
+    opacity: 1;             /* End with full opacity */
+  }
+}
+
+.text-animate {
+  animation: growAndFadeIn 0.5s ease-out;  /* Apply the animation */
+}

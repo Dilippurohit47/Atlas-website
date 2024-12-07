@@ -39,7 +39,7 @@ const Header = () => {
           src="/logo-for-large-screens.png"
           height={180}
           width={180}
-          className="max-lg:hidden"
+          className="max-lg:hidden text-animate" 
         />
       </div>
 
@@ -49,7 +49,7 @@ const Header = () => {
           onMouseEnter={() => setShowDropdown(true)}
           onMouseLeave={() => setShowDropdown(false)}
         >
-          <h1 className="text-[1.1rem] font-bold cursor-pointer hover:text-blue-400 transition ease-in duration-100">
+          <h1 className="text-[1.1rem] text-animate font-bold cursor-pointer hover:text-blue-400 transition ease-in duration-100">
             Book a Property
           </h1>
           <DropDown show={showDropdown} setShow={setShowDropdown} />
@@ -57,7 +57,7 @@ const Header = () => {
 
         <ul className="flex gap-7">
           {links.map((link, index) => (
-            <li key={index}>
+            <li key={index} className="text-animate">
               <a
                 className="text-[1.1rem] font-bold hover:text-blue-400 transition ease-in duration-100"
                 href="#"
