@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { SetStateAction, useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 interface LinkType {
   name: string;
@@ -19,9 +19,13 @@ const places = [
   { name: "Cloradio" },
 ];
 
-const MobileMenu = ({ open, setOpen }) => {
+interface MobileMenuTypes {
+  open: boolean;
+  setOpen: React.Dispatch<SetStateAction<boolean>>;
+}
+
+const MobileMenu: React.FC<MobileMenuTypes> = ({ open }) => {
   const [openNewSidebar, SetOpenNewSideBar] = useState<boolean>(false);
-  console.log(openNewSidebar);
   return (
     <div
       className={` h-[90vh] flex   w-full absolute top left-0 transition-all overflow-hidden ease-in-out duration-500  py-3 ${

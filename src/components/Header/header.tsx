@@ -6,19 +6,20 @@ import Image from "next/image";
 import MobileMenu from "./mobileMenu";
 import MenuButton from "./MenuButton";
 import DropDown from "./DropDown";
+import Link from "next/link";
 
 interface LinkType {
   name: string;
+  url: string;
 }
 
 const links: LinkType[] = [
-  { name: "Services" },
-  { name: "Blog" },
-  { name: "List Your Property" },
-  { name: "Refer  a Property" },
-  { name: "Locations" },
+  { name: "Services", url: "services" },
+  { name: "Blog", url: "blog" },
+  { name: "List Your Property", url: "list-your-property" },
+  { name: "Refer a Property", url: "refer-a-property" },
+  { name: "Locations", url: "locations" },
 ];
-
 const Header = () => {
   const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
@@ -58,12 +59,12 @@ const Header = () => {
         <ul className="flex gap-7">
           {links.map((link, index) => (
             <li key={index} className="text-animate">
-              <a
+              <Link
                 className="text-[1.1rem] font-bold hover:text-blue-400 transition ease-in duration-100"
-                href="#"
+                href={link.url}
               >
                 {link.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

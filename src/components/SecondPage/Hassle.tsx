@@ -3,8 +3,8 @@ import React from "react";
 
 const Hassle = () => {
   return (
-    <div className="h-[60vh] max-md:h-full  bg-[#24323D] flex lg:gap-20 justify-between items-center w-full max-md:flex-col max-md:px-6  max-md:py-10 max-md:gap-3 md:gap-12 ">
-      <div className=" w-[36.5vw]  max-md:w-full   flex justify-start items-center">
+    <div className="h-[60vh] max-md:h-full  bg-[#24323D] flex lg:gap-20 justify-between items-center w-full max-md:flex-col px-6 py-10 max-md:gap-3 md:gap-12 ">
+      <div className=" w-[36.5vw]  max-md:w-full   flex justify-start items-center lg:justify-end">
         <Image
           src="/key-in-hand.jpg"
           height={200}
@@ -24,7 +24,9 @@ const Hassle = () => {
         <h3 className="text-[1.1rem] mb-6 text-white font-bold">
           More Money. Less Stress.
         </h3>
-        <button className="primary-button max-md:!text-[1rem] max">Free Property Evaluation</button>
+        <button className="primary-button max-md:!text-[1rem] max">
+          Free Property Evaluation
+        </button>
       </div>
     </div>
   );

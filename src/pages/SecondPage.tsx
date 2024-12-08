@@ -7,8 +7,8 @@ const SecondPage = () => {
   return (
     <div className="">
       <Hassle />
-      {/* <ReferComponent /> */}
-      {/* <OfferComponent /> */}
+      <ReferComponent />
+      <OfferComponent />
     </div>
   );
 };

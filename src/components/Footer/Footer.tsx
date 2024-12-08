@@ -5,18 +5,18 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 const Footer = () => {
   return (
-    <footer className="bg-[#24323D]  justify-center  lg:h-[45vh] h-[100vh] w-full px-2 lg:gap-[10rem] flex flex-col md:flex-row items-center gap-[4.5rem] md:gap-6">
-      <div className="    flex items-center  mt-14 justify-center">
+    <footer className="bg-[#24323D]  justify-center  lg:h-[45vh] h-[100vh] w-full px-2  lg:flex-row lg:gap-[5rem] xl:gap-[10rem] flex flex-col md:flex-col items-center gap-[4.5rem] md:gap-[4rem]">
+      <div className="    flex items-center   mt-14 justify-center">
         <Image
           alt="Logo"
           src="/logo-white-atlas.png"
           height={260}
           width={260}
-          className="text-animate  "
+          className="text-animate "
         />
       </div>
 
-      <div className="flex flex-col px-4 md:mt-[10rem] lg:mt-[2rem] items-center lg:flex-col gap-6  max-w-[35rem] ">
+      <div className="flex flex-col px-4  lg:mt-[2rem] items-center lg:flex-col gap-6  max-w-[35rem] ">
         <h5 className="text-[1.1rem] text-white text-center">
           Sign up with your email address to receive news and updates.
         </h5>
@@ -52,9 +52,6 @@ const Footer = () => {
           />
         </div>
       </div>
-
-
-
     </footer>
   );
 };

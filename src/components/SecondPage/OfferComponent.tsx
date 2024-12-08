@@ -3,15 +3,15 @@ import OfferList from "./OfferList";
 
 const OfferComponent = () => {
   return (
-    <div className="h-[75vh] flex justify-center items-center bg-blue-500 flex-col w-full">
+    <div className=" w-full flex justify-center items-center bg-blue-500 flex-col  px-3 py-10 ">
       <div className=" flex items-center justify-center flex-col space-y-4">
-        <h1 className="text-[4rem] font-bold text-white">What We Offer</h1>
-        <button className="primary-button !bg-black !bg-opacity-70 hover:!bg-opacity-50">
+        <h1 className="text-[2.5rem] lg:text-[4rem] font-bold text-white">What We Offer</h1>
+        <button className="primary-button !cursor-pointer !bg-black !bg-opacity-70 hover:!bg-opacity-50">
           Get Started
         </button>
       </div>
 
-      <div className="flex  gap-10">
+      <div className="flex  gap-10  md:flex-row flex-col">
         <OfferList
           heading={"Revenue Maximization"}
           offerList={[
