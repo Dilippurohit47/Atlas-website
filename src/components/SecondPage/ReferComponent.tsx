@@ -2,9 +2,9 @@ import React from "react";
 
 const ReferComponent = () => {
   return (
-    <div className="w-full h-[60vh] bg-image-refer flex  items-center justify-center">
+    <div className="w-full h-[63vh] bg-image-refer flex  items-center justify-center">
       <div
-        style={{ height: "60vh" }}
+        style={{ height: "63vh" }}
         className="bg-black z-0 w-full opacity-55  absolute  "
       ></div>
       <div className="z-10 flex items-center justify-center flex-col">

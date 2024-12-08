@@ -5,10 +5,10 @@ import React from "react";
 
 const SecondPage = () => {
   return (
-    <div className=" h-screen">
+    <div className="">
       <Hassle />
-      <ReferComponent />
-      <OfferComponent />
+      {/* <ReferComponent /> */}
+      {/* <OfferComponent /> */}
     </div>
   );
 };

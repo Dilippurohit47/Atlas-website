@@ -52,8 +52,8 @@
 }
 
 .primary-button {
-  @apply bg-blue-light px-11 py-5 text-white  text-animate  font-bold uppercase border border-white rounded-md hover:bg-blue-600 transition ease-in duration-200;
+  @apply bg-blue-light px-11 py-5 text-white  text-animate  font-bold uppercase border border-white rounded-md hover:bg-blue-600 transition ease-in duration-200  ; 
 }
 .heading-2 {
-  @apply text-white text-4xl text-center font-bold;
+  @apply text-white text-4xl text-center font-bold max-md:text-2xl;
 }
