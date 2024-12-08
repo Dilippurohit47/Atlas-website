@@ -7,6 +7,7 @@ export default function Home() {
     <div className="">
       <Header />
       <HomePage />
+      <SecondPage />
     </div>
   );
 }
