@@ -7,6 +7,7 @@ import MobileMenu from "./mobileMenu";
 import MenuButton from "./MenuButton";
 import DropDown from "./DropDown";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
 interface LinkType {
   name: string;
@@ -24,16 +25,17 @@ const Header = () => {
   const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
 
+  const [activeLink, setActiveLink] = useState<string>("");
   return (
-    <header className="relative bg px-5 flex items-center justify-between lg:px-10 lg:py-[3.2rem] h-[4.7rem] ">
+    <header className="relative bg px-5 flex items-center justify-between lg:px-10 lg:py-[2.8rem] h-[4rem] ">
       {/* Logo Section */}
-      <div>
+      <Link href={"/"}>
         <Image
           alt="Logo"
           src={Favicon}
           height={30}
           width={30}
-          className="lg:hidden md:h-[50px] sm:w-[50px] h-[40px] w-[40px]"
+          className="lg:hidden  md:h-[50px] sm:w-[50px] h-[40px] w-[40px]"
         />
         <Image
           alt="Logo"
@@ -42,7 +44,7 @@ const Header = () => {
           width={180}
           className="max-lg:hidden text-animate"
         />
-      </div>
+      </Link>
 
       {/* Main Navigation */}
       <nav className="flex gap-7 max-lg:hidden">
@@ -50,7 +52,7 @@ const Header = () => {
           onMouseEnter={() => setShowDropdown(true)}
           onMouseLeave={() => setShowDropdown(false)}
         >
-          <h1 className="text-[1.1rem] text-animate font-bold cursor-pointer hover:text-blue-400 transition ease-in duration-100">
+          <h1 className="text-[1rem] text-animate font-bold cursor-pointer hover:text-blue-400 transition ease-in duration-100">
             Book a Property
           </h1>
           <DropDown show={showDropdown} setShow={setShowDropdown} />
@@ -60,8 +62,11 @@ const Header = () => {
           {links.map((link, index) => (
             <li key={index} className="text-animate">
               <Link
-                className="text-[1.1rem] font-bold hover:text-blue-400 transition ease-in duration-100"
+                className={`text-[1rem]  font-bold hover:text-blue-400 transition ease-in duration-100 ${
+                  activeLink === link.url ? "text-blue-600" : "text-black"
+                }`}
                 href={link.url}
+                onClick={() => setActiveLink(link.url)}
               >
                 {link.name}
               </Link>

@@ -1,18 +1,19 @@
+import Link from "next/link";
 import React, { SetStateAction, useState, useEffect } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 
 interface LinkType {
   name: string;
+  url: string;
 }
 
 const links: LinkType[] = [
-  { name: "services" },
-  { name: "blogs" },
-  { name: "list a property" },
-  { name: "book a property" },
-  { name: "locations" },
+  { name: "Services", url: "services" },
+  { name: "Blog", url: "blog" },
+  { name: "List Your Property", url: "list-your-property" },
+  { name: "Refer a Property", url: "refer-a-property" },
+  { name: "Locations", url: "locations" },
 ];
-
 const places = [
   { name: "All Properties" },
   { name: "New York" },
@@ -31,15 +32,17 @@ const MobileMenu: React.FC<MobileMenuTypes> = ({ open }) => {
 
   useEffect(() => {
     if (open) {
-      document.body.style.overflow = "hidden"; // Disable body scrolling
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = ""; // Re-enable body scrolling
+      document.body.style.overflow = "";
     }
 
     return () => {
-      document.body.style.overflow = ""; // Cleanup when component unmounts
+      document.body.style.overflow = "";
     };
   }, [open]);
+
+  const [activeLink, setActiveLink] = useState<string>("");
 
   return (
     <div
@@ -65,9 +68,16 @@ const MobileMenu: React.FC<MobileMenuTypes> = ({ open }) => {
           </div>
         </div>
         {links.map((link, index) => (
-          <a key={index} className="text-3xl font-bold capitalize" href="#">
+          <Link
+            href={link.url}
+            key={index}
+            className={`text-3xl font-bold capitalize ${
+              activeLink === link.url ? "text-blue-600" : "text-black"
+            }`}
+            onClick={() => setActiveLink(link.url)}
+          >
             {link.name}
-          </a>
+          </Link>
         ))}
       </div>
 

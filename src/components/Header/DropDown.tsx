@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 
 // Defining types for the props passed to DropDown component
@@ -37,14 +38,14 @@ const DropDown: React.FC<DropDownProps> = ({ show, setShow }) => {
       <ul role="none" className="space-y-2">
         {places.map((item, index) => (
           <li key={index}>
-            <a
-              className="text-white text-[1.1rem] font-semibold"
+            <Link
+              className="text-white  text-[1.1rem] font-semibold"
               href="#"
               role="menuitem" 
               tabIndex={0} 
             >
               {item.name}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
