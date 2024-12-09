@@ -1,13 +1,13 @@
 "use client";
-import React, { useState } from "react";
 import dynamic from "next/dynamic";
-import Favicon from "../../app/Favicon.ico";
 import Image from "next/image";
-import MobileMenu from "./mobileMenu";
-import MenuButton from "./MenuButton";
-import DropDown from "./DropDown";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import Favicon from "../../app/Favicon.ico";
+import DropDown from "./DropDown";
+import MenuButton from "./MenuButton";
+import MobileMenu from "./mobileMenu";
 
 interface LinkType {
   name: string;
@@ -24,8 +24,16 @@ const links: LinkType[] = [
 const Header = () => {
   const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
+  const pathname = usePathname();
+  const [activeLink, setActiveLink] = useState<string | undefined>("");
 
-  const [activeLink, setActiveLink] = useState<string>("");
+  useEffect(() => {
+    const formattedPathname =
+      pathname === "/" ? "" : pathname?.replace("/", "");
+
+    setActiveLink(formattedPathname);
+  }, [pathname]);
+
   return (
     <header className="relative bg px-5 flex items-center justify-between lg:px-10 lg:py-[2.8rem] h-[4rem] ">
       {/* Logo Section */}

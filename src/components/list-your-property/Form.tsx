@@ -69,7 +69,7 @@ const Form = () => {
   return (
     <form
       onSubmit={handleSubmit}
-        className="max-w-[45rem] mt-10 grid gap-6 md:grid-cols-1 lg:grid-cols-2 w-full"
+      className="max-w-[45rem] mt-10 grid gap-6 md:grid-cols-1 lg:grid-cols-2 w-full"
     >
       {inputFields.map((field) => (
         <div key={field.id}>
@@ -84,7 +84,7 @@ const Form = () => {
             value={formData[field.id as keyof typeof formData]}
             onChange={handleChange}
             required={field.required}
-            className="mt-1 w-full border rounded p-2 shadow-md focus:ring focus:ring-blue-500"
+            className="mt-1 w-full border rounded p-2 shadow-md  focus:outline-none"
           />
         </div>
       ))}
@@ -98,7 +98,7 @@ const Form = () => {
           name="additionalInfo"
           value={formData.additionalInfo}
           onChange={handleChange}
-          className="mt-1 w-full border rounded p-2 shadow-md focus:ring focus:ring-blue-500"
+          className="mt-1 w-full border rounded p-2 shadow-md  "
         />
       </div>
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { SetStateAction, useState, useEffect } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -41,8 +42,15 @@ const MobileMenu: React.FC<MobileMenuTypes> = ({ open }) => {
       document.body.style.overflow = "";
     };
   }, [open]);
+  const pathname = usePathname();
+  const [activeLink, setActiveLink] = useState<string | undefined>("");
 
-  const [activeLink, setActiveLink] = useState<string>("");
+  useEffect(() => {
+    const formattedPathname =
+      pathname === "/" ? "" : pathname?.replace("/", "");
+
+    setActiveLink(formattedPathname);
+  }, [pathname]);
 
   return (
     <div

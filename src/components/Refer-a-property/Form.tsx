@@ -73,7 +73,7 @@ const Form = () => {
             name={field.id}
             value={formData[field.id as keyof typeof formData]}
             onChange={handleChange}
-            className="mt-1 w-full border rounded p-2 shadow-md"
+            className="mt-1 w-full border rounded p-2 shadow-md focus:outline-none"
             required={field.required}
           />
         </div>
