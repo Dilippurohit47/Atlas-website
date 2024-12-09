@@ -1,8 +1,10 @@
-import React, { SetStateAction, useState } from "react";
+import React, { SetStateAction, useState, useEffect } from "react";
 import { IoIosArrowForward } from "react-icons/io";
+
 interface LinkType {
   name: string;
 }
+
 const links: LinkType[] = [
   { name: "services" },
   { name: "blogs" },
@@ -14,9 +16,9 @@ const links: LinkType[] = [
 const places = [
   { name: "All Properties" },
   { name: "New York" },
-  { name: "Florida " },
-  { name: "Cloradio" },
-  { name: "Cloradio" },
+  { name: "Florida" },
+  { name: "Colorado" },
+  { name: "Texas" },
 ];
 
 interface MobileMenuTypes {
@@ -25,24 +27,40 @@ interface MobileMenuTypes {
 }
 
 const MobileMenu: React.FC<MobileMenuTypes> = ({ open }) => {
-  const [openNewSidebar, SetOpenNewSideBar] = useState<boolean>(false);
+  const [openNewSidebar, setOpenNewSidebar] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden"; // Disable body scrolling
+    } else {
+      document.body.style.overflow = ""; // Re-enable body scrolling
+    }
+
+    return () => {
+      document.body.style.overflow = ""; // Cleanup when component unmounts
+    };
+  }, [open]);
+
   return (
     <div
-      className={` h-[90vh] flex   w-full absolute top left-0 transition-all overflow-hidden ease-in-out duration-500  py-3 ${
-        open ? "top-[8.5vh]  opacity-1" : "top-[30vh]  opacity-0"
-      } `}
+      className={`menuDiv h-[92vh] flex bg-white w-full absolute left-0 transition-all overflow-hidden ease-in-out duration-500 py-3 ${
+        open
+          ? "top-[8.5vh] opacity-1 z-50"
+          : "top-[30vh] opacity-0 -z-50 pointer-events-none"
+      }`}
+      style={{ overflowY: "auto" }} // Allow scrolling inside the menu
     >
       <div
-        className={`flex flex-col w-full  absolute transition ease-in-out duration-500 justify-center items-center h-full capitalize ${
+        className={`flex flex-col w-full absolute transition ease-in-out duration-500 justify-center items-center h-full capitalize ${
           openNewSidebar ? "-translate-x-[100vw]" : "translate-x-[0vw]"
         }`}
       >
         <div
-          className=" flex gap-1 items-center "
-          onClick={() => SetOpenNewSideBar(true)}
+          className="flex gap-1 items-center"
+          onClick={() => setOpenNewSidebar(true)}
         >
           <h3 className="text-3xl font-bold">Book a Property</h3>
-          <div className=" translate-y-1">
+          <div className="translate-y-1">
             <IoIosArrowForward size={25} />
           </div>
         </div>
@@ -54,17 +72,15 @@ const MobileMenu: React.FC<MobileMenuTypes> = ({ open }) => {
       </div>
 
       <div
-        className={`  flex flex-col space-y-3 justify-center items-center   w-full transition ease-in-out duration-500 ${
+        className={`flex flex-col space-y-3 justify-center items-center w-full transition ease-in-out duration-500 ${
           openNewSidebar ? "translate-x-[0vw]" : "translate-x-[100vw]"
         }`}
-        onClick={() => SetOpenNewSideBar(false)}
       >
         <div
-          className=" flex gap-1 items-center "
-          onClick={() => SetOpenNewSideBar(true)}
+          className="flex gap-1 items-center"
+          onClick={() => setOpenNewSidebar(false)}
         >
-          {" "}
-          <div className=" translate-y-[2px] text-gray-400">
+          <div className="translate-y-[2px] text-gray-400">
             <IoIosArrowForward size={25} className="rotate-[180deg]" />
           </div>
           <h3 className="text-3xl text-gray-400 font-bold">Back</h3>

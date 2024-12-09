@@ -60,3 +60,8 @@
 .heading-3 {
   @apply text-white text-[1.3rem] text-center font-bold max-md:text-xl;
 }
+
+.menu-page {
+  touch-action: none; /* Prevent touch-based scrolling */
+  overscroll-behavior: contain; /* Prevent overscrolling to underlying content */
+}

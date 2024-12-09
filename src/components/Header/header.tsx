@@ -72,7 +72,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <MenuButton open={openMobileMenu} setOpen={setOpenMobileMenu} />
-      {/* <MobileMenu open={openMobileMenu} setOpen={setOpenMobileMenu} /> */}
+      <MobileMenu open={openMobileMenu} setOpen={setOpenMobileMenu} />
     </header>
   );
 };
