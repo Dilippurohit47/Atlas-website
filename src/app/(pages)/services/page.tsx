@@ -19,7 +19,7 @@ const services: ServiceType[] = [
   },
   {
     heading: "Cleaning and Maintenance",
-    image: "/service-money.jpeg",
+    image: "/cleaning.jpeg",
     paragraphs: [
       "Our Cleaning & Maintenance services ensure your property is always at its best.",
       "We prioritize high standards of cleanliness and timely maintenance, ensuring every aspect of your property is in prime condition ",
@@ -28,7 +28,7 @@ const services: ServiceType[] = [
   },
   {
     heading: "Guest Satisfaction",
-    image: "/service-money.jpeg",
+    image: "/guest.jpeg",
     paragraphs: [
       "Guest Satisfaction is at the heart of our services.",
       "We offer 24-hour guest communication, ensuring that any inquiries or needs are promptly addressed at any time of the day or night.",
